@@ -73,6 +73,7 @@ public class TileBoard : MonoBehaviour
             }
         }
         
+
     }
     private void MoveTiles(Vector2Int direction,int startx,int incrementx, int starty, int incrementy)
     {
@@ -140,6 +141,8 @@ public class TileBoard : MonoBehaviour
         int number = b.number * 2;
 
         b.SetState(tileStates[index], number);
+
+        gameManager.IncreaseScore(number);
     }
 
     private int IndexOf(TileState state)
