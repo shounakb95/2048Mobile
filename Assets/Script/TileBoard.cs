@@ -180,6 +180,11 @@ public class TileBoard : MonoBehaviour
 
     private bool CheckForGameOver()
     {
+        foreach(var tile in tiles)
+        {
+            if (tile.number == 2048)
+                return true;
+        }
         if (tiles.Count != grid.size)
         {
             return false;
@@ -208,6 +213,7 @@ public class TileBoard : MonoBehaviour
             {
                 return false;
             }
+            
         }
 
         return true;
